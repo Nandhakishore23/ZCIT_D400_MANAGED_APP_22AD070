@@ -1,0 +1,45 @@
+//managed implementation in class zbp_cit_rstudent_22ad070 unique;
+//strict ( 2 );
+//
+//define behavior for ZCIT_RSTUDENT_22AD070 //alias <alias_name>
+//persistent table zcit_stud_table
+//lock master
+//authorization master ( instance )
+////etag master <field_name>
+//{
+//  create ( authorization : global );
+//  update;
+//  delete;
+//  field ( readonly ) Id;
+//}
+
+
+managed implementation in class zbp_cit_rstudent_22ad070 unique;
+strict ( 2 );
+define behavior for ZCIT_RSTUDENT_22AD070 //alias <alias_name>
+persistent table zcit_stud_table
+lock master
+authorization master ( instance )
+//etag master <field_name>
+{
+create;
+update;
+delete;
+// Fields for the Student entity
+field ( numbering : managed, readonly ) Id;
+// Mapping for fields to the persistent table ystudent_00 student
+mapping for zcit_stud_table
+{
+Id = id;
+Firstname = firstname;
+Lastname = lastname;
+Age = age;
+Course = course;
+Courseduration = courseduration;
+Status = status;
+Gender = gender;
+Dob = dob;
+Lastchangedat = lastchangedat;
+Locallastchangedat = locallastchangedat;
+}
+}
